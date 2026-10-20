@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-black text-[#A1A1AA]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&gt;_VOSC // Vasavi Open Source Community</title>
+  <meta name="description" content="Vasavi Open Source Community — Minimalist terminal workspace and engineering chapter at Vasavi College of Engineering.">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+  <!-- Google Fonts: JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            black: '#000000',
+            terminal: {
+              bg: '#000000',
+              text: '#A1A1AA',
+              white: '#FFFFFF',
+              green: '#4ADE80',
+              hover: '#18181B',
+              dim: '#52525B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'JetBrains Mono', monospace !important;
+      border-radius: 0px !important; /* Strict sharp terminal aesthetic */
+      box-shadow: none !important;
+    }
+
+    body {
+      background-color: #000000;
+      color: #A1A1AA;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Infinite terminal cursor blink */
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .terminal-cursor {
+      animation: cursorBlink 1s infinite;
+    }
+
+    /* Directory Row Hover Interaction */
+    .dir-row {
+      transition: background-color 0.12s ease;
+    }
+    .dir-row:hover {
+      background-color: #18181B;
+    }
+    .dir-row:hover .row-name {
+      color: #FFFFFF;
+    }
+    .dir-row:hover .row-caret {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-[#A1A1AA] flex flex-col justify-between selection:bg-[#4ADE80] selection:text-black px-6 sm:px-12 md:px-20 max-w-7xl mx-auto w-full">
+
+  <!-- ============================================================
+       1. THE GHOST HEADER
+       Minimalist top navigation. No background color, no borders.
+       Left: Blinking >_VOSC logo
+       Right: Plaintext links [ projects ], [ team ], [ events ]
+       ============================================================ -->
+  <header class="w-full pt-8 sm:pt-12 flex items-center justify-between text-xs sm:text-sm select-none">
+    
+    <!-- Logo: >_VOSC with infinite blinking phosphor green cursor -->
+    <a href="#hero" class="flex items-center font-bold tracking-tight text-white hover:opacity-90 focus:outline-none">
+      <span class="text-white">&gt;</span>
+      <span class="text-[#4ADE80] terminal-cursor">_</span>
+      <span class="text-white tracking-widest ml-1">VOSC</span>
+    </a>
+
+    <!-- Navigation: Plaintext links with green hover brackets -->
+    <nav class="flex items-center gap-5 sm:gap-8 text-xs lowercase">
+      <a href="#projects" class="group text-[#A1A1AA] hover:text-white transition-colors">
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">[</span>
+        <span>projects</span>
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">]</span>
+      </a>
+      <a href="#team" class="group text-[#A1A1AA] hover:text-white transition-colors">
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">[</span>
+        <span>team</span>
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">]</span>
+      </a>
+      <a href="#events" class="group text-[#A1A1AA] hover:text-white transition-colors">
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">[</span>
+        <span>events</span>
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">]</span>
+      </a>
+      <a href="https://github.com/vasaviosc" target="_blank" class="group text-[#A1A1AA] hover:text-white transition-colors hidden sm:inline">
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">[</span>
+        <span>github</span>
+        <span class="text-zinc-600 group-hover:text-[#4ADE80] transition-colors">]</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT CONTAINER
+       ============================================================ -->
+  <main class="w-full flex-1">
+
+    <!-- ============================================================
+         2. THE TERMINAL HERO
+         Massive vertical whitespace (pt-[15vh])
+         Left-aligned header: init_community_workspace();
+         Two-line grey paragraph explaining the Vasavi mission
+         Single text button with green 1px border: Execute 'join_discord'
+         ============================================================ -->
+    <section id="hero" class="pt-[14vh] sm:pt-[16vh] pb-24 sm:pb-32 space-y-8">
+      
+      <!-- System prompt line -->
+      <div class="text-xs text-zinc-600 flex items-center gap-2">
+        <span>vasavi-college-of-engineering:~$</span>
+        <span class="text-zinc-400">./boot_vosc.sh --release=2026</span>
+      </div>
+
+      <!-- Left-aligned hero command -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+        init_community_workspace();
+      </h1>
+
+      <!-- Two-line muted grey paragraph -->
+      <div class="max-w-2xl space-y-1">
+        <p class="text-sm sm:text-base text-[#A1A1AA] leading-relaxed">
+          Vasavi's autonomous open-source engineering collective.
+        </p>
+        <p class="text-sm sm:text-base text-zinc-500 leading-relaxed">
+          A zero-noise workspace for students building production systems, developer tooling, and distributed protocols.
+        </p>
+      </div>
+
+      <!-- Single simple button: Text with a green 1px border (no background) -->
+      <div class="pt-4">
+        <a 
+          href="https://discord.gg" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-3 px-5 py-3 border border-[#4ADE80] text-[#4ADE80] text-xs sm:text-sm font-medium tracking-wide bg-transparent hover:bg-[#4ADE80] hover:text-black transition-colors focus:outline-none cursor-pointer"
+        >
+          <span>Execute 'join_discord'</span>
+          <span class="text-xs font-bold">&rarr;</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         3. THE CLEAN DIRECTORY (PROJECTS)
+         Tabular layout resembling `ls -la` directory output.
+         Columns: Permissions | Repository Name | Status | Primary Language
+         Hover: Row turns #18181B and a green '>' appears next to name.
+         ============================================================ -->
+    <section id="projects" class="py-16 sm:py-24 space-y-6">
+      
+      <!-- Terminal prompt header -->
+      <div class="flex items-center justify-between text-xs text-zinc-500 border-b border-zinc-900 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-white font-semibold">user@vce</span>:<span class="text-[#4ADE80]">~/repositories</span>$&nbsp;ls -la --sort=activity
+        </div>
+        <div class="hidden sm:block text-[11px] text-zinc-600">
+          total 4 entries (4 dirs)
+        </div>
+      </div>
+
+      <!-- Tabular List Container (ls -la format) -->
+      <div class="w-full text-xs sm:text-sm overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[620px]">
+          
+          <!-- Column Headers -->
+          <thead>
+            <tr class="text-[11px] text-zinc-600 border-b border-zinc-900 uppercase tracking-wider select-none">
+              <th class="py-2.5 font-normal w-32">Perms</th>
+              <th class="py-2.5 font-normal">Repository Name</th>
+              <th class="py-2.5 font-normal w-36">Status</th>
+              <th class="py-2.5 font-normal w-44 text-right sm:text-left">Language</th>
+            </tr>
+          </thead>
+
+          <!-- Table Body Rows -->
+          <tbody class="divide-y divide-zinc-900/60 font-mono">
+            
+            <!-- ROW 01: campus-flow -->
+            <tr onclick="window.open('https://github.com/vasaviosc/campus-flow', '_blank')" class="dir-row group cursor-pointer">
+              <!-- Permissions -->
+              <td class="py-4 text-zinc-500 select-none">
+                drwxr-xr-x
+              </td>
+              <!-- Repository Name with Green Caret -->
+              <td class="py-4 text-zinc-300">
+                <div class="flex items-center gap-1.5">
+                  <span class="row-caret text-[#4ADE80] font-bold opacity-0 -translate-x-1.5 transition-all select-none">&gt;</span>
+                  <span class="row-name font-semibold text-white transition-colors">campus-flow</span>
+                  <span class="text-zinc-600 text-[11px] ml-2 hidden md:inline">// indoor routing &amp; timetable automation</span>
+                </div>
+              </td>
+              <!-- Status -->
+              <td class="py-4 text-zinc-500">
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#4ADE80]"></span>
+                  <span>production</span>
+                </span>
+              </td>
+              <!-- Primary Language -->
+              <td class="py-4 text-zinc-400 text-right sm:text-left">
+                Dart / Flutter
+              </td>
+            </tr>
+
+            <!-- ROW 02: vasaviosc.github.io -->
+            <tr onclick="window.open('https://github.com/vasaviosc/vasaviosc.github.io', '_blank')" class="dir-row group cursor-pointer">
+              <td class="py-4 text-zinc-500 select-none">
+                drwxr-xr-x
+              </td>
+              <td class="py-4 text-zinc-300">
+                <div class="flex items-center gap-1.5">
+                  <span class="row-caret text-[#4ADE80] font-bold opacity-0 -translate-x-1.5 transition-all select-none">&gt;</span>
+                  <span class="row-name font-semibold text-white transition-colors">vasaviosc.github.io</span>
+                  <span class="text-zinc-600 text-[11px] ml-2 hidden md:inline">// official web portal &amp; docs engine</span>
+                </div>
+              </td>
+              <td class="py-4 text-zinc-500">
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#4ADE80]"></span>
+                  <span>active</span>
+                </span>
+              </td>
+              <td class="py-4 text-zinc-400 text-right sm:text-left">
+                TypeScript / Next.js
+              </td>
+            </tr>
+
+            <!-- ROW 03: algoverse -->
+            <tr onclick="window.open('https://github.com/vasaviosc/algoverse', '_blank')" class="dir-row group cursor-pointer">
+              <td class="py-4 text-zinc-500 select-none">
+                drwxr-xr-x
+              </td>
+              <td class="py-4 text-zinc-300">
+                <div class="flex items-center gap-1.5">
+                  <span class="row-caret text-[#4ADE80] font-bold opacity-0 -translate-x-1.5 transition-all select-none">&gt;</span>
+                  <span class="row-name font-semibold text-white transition-colors">algoverse</span>
+                  <span class="text-zinc-600 text-[11px] ml-2 hidden md:inline">// dsa benchmarks &amp; visualizer engine</span>
+                </div>
+              </td>
+              <td class="py-4 text-zinc-500">
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#4ADE80]"></span>
+                  <span>stable</span>
+                </span>
+              </td>
+              <td class="py-4 text-zinc-400 text-right sm:text-left">
+                C++ / Rust / WASM
+              </td>
+            </tr>
+
+            <!-- ROW 04: vosc-bot -->
+            <tr onclick="window.open('https://github.com/vasaviosc/vosc-bot', '_blank')" class="dir-row group cursor-pointer">
+              <td class="py-4 text-zinc-500 select-none">
+                drwxr-xr-x
+              </td>
+              <td class="py-4 text-zinc-300">
+                <div class="flex items-center gap-1.5">
+                  <span class="row-caret text-[#4ADE80] font-bold opacity-0 -translate-x-1.5 transition-all select-none">&gt;</span>
+                  <span class="row-name font-semibold text-white transition-colors">vosc-bot</span>
+                  <span class="text-zinc-600 text-[11px] ml-2 hidden md:inline">// pr webhooks &amp; discord role daemon</span>
+                </div>
+              </td>
+              <td class="py-4 text-zinc-500">
+                <span class="inline-flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#4ADE80]"></span>
+                  <span>daemon-up</span>
+                </span>
+              </td>
+              <td class="py-4 text-zinc-400 text-right sm:text-left">
+                Python / FastAPI
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         UPCOMING EVENTS / LOGS
+         ============================================================ -->
+    <section id="events" class="py-16 space-y-6">
+      <div class="text-xs text-zinc-500 border-b border-zinc-900 pb-3 flex items-center gap-2">
+        <span class="text-white font-semibold">user@vce</span>:<span class="text-[#4ADE80]">~/events</span>$&nbsp;cat ./scheduled.log
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-zinc-400 hover:text-white transition-colors">
+          <div class="flex items-center gap-3">
+            <span class="text-[#4ADE80] select-none">&bull;</span>
+            <span class="text-white font-medium">Open Source Bootcamp // Git Fundamentals</span>
+          </div>
+          <div class="text-zinc-500 text-xs sm:text-right">
+            <span>2026-10-24 10:00 IST</span> &bull; <span>Ramanujan Hall, VCE</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-zinc-400 hover:text-white transition-colors">
+          <div class="flex items-center gap-3">
+            <span class="text-[#4ADE80] select-none">&bull;</span>
+            <span class="text-white font-medium">VOSC Midnight Ship-a-Thon 2026</span>
+          </div>
+          <div class="text-zinc-500 text-xs sm:text-right">
+            <span>2026-11-14 20:00 IST</span> &bull; <span>Campus Lab &amp; Discord</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TEAM MANIFEST
+         ============================================================ -->
+    <section id="team" class="py-16 space-y-4 border-t border-zinc-900">
+      <div class="text-xs text-zinc-500 flex items-center gap-2">
+        <span class="text-white font-semibold">user@vce</span>:<span class="text-[#4ADE80]">~/org</span>$&nbsp;whoami --all
+      </div>
+      <p class="text-xs sm:text-sm text-zinc-400 max-w-xl leading-relaxed">
+        Vasavi Open Source Community is maintained autonomously by undergraduate students across CSE, IT, and ECE at Vasavi College of Engineering, Hyderabad. All contributions are credited in repository git trees.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       4. THE EOF FOOTER
+       A simple, centered footer at the bottom with standard links
+       and the text EOF (End of File) in the center.
+       ============================================================ -->
+  <footer class="w-full py-16 sm:py-20 flex flex-col items-center justify-center space-y-6 select-none border-t border-zinc-900">
+    
+    <!-- Standard Minimalist Links -->
+    <div class="flex items-center gap-6 sm:gap-8 text-xs text-zinc-500 lowercase">
+      <a href="https://github.com/vasaviosc" target="_blank" class="hover:text-[#4ADE80] transition-colors">github</a>
+      <a href="https://discord.gg" target="_blank" class="hover:text-[#4ADE80] transition-colors">discord</a>
+      <a href="https://vce.ac.in" target="_blank" class="hover:text-[#4ADE80] transition-colors">vce.ac.in</a>
+      <a href="#hero" class="hover:text-[#4ADE80] transition-colors">top &uarr;</a>
+    </div>
+
+    <!-- The Centered EOF Text -->
+    <div class="text-xs tracking-widest text-zinc-600 font-bold flex items-center gap-2">
+      <span class="text-zinc-800">---</span>
+      <span class="text-[#4ADE80]">EOF</span>
+      <span class="text-zinc-800">---</span>
+    </div>
+
+    <!-- Minimal Metadata -->
+    <div class="text-[11px] text-zinc-700 text-center">
+      vasavi open source community &bull; ibrahimbagh, hyderabad &bull; mit open source
+    </div>
+
+  </footer>
+
+</body>
+</html>

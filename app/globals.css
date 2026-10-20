@@ -1,30 +1,208 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @import "tw-animate-css";
-@import "highlight.js/styles/github.css";
+@import "highlight.js/styles/github-dark.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #012728;
+  --foreground: #B5FFF0;
+  --card: #061B1C;
+  --card-foreground: #B5FFF0;
+  --popover: #061B1C;
+  --popover-foreground: #B5FFF0;
+  --primary: #00DCC0;
+  --primary-foreground: #012728;
+  --secondary: #003A3B;
+  --secondary-foreground: #B5FFF0;
+  --muted: #003A3B;
+  --muted-foreground: #00DCC0;
+  --accent: #003A3B;
+  --accent-foreground: #6AFBD8;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #00DCC0;
+  --input: #00DCC0;
+  --ring: #6AFBD8;
+  --radius: 0.25rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Specific VOSC 6-Color Palette Tokens */
+  --color-midnight-teal: #012728;
+  --color-deep-teal: #003A3B;
+  --color-turquoise: #00DCC0;
+  --color-bright-mint: #6AFBD8;
+  --color-pale-mint: #B5FFF0;
+  --color-near-black: #061B1C;
+
+  /* Aliases for ease of use across components */
+  --color-teal-bg: #012728;
+  --color-teal-surface: #003A3B;
+  --color-teal-border: #00DCC0;
+  --color-mint-highlight: #6AFBD8;
+  --color-mint-text: #B5FFF0;
+  --color-teal-depth: #061B1C;
+
+  --font-pixel: var(--font-pixel, monospace);
+  --font-mono: var(--font-mono, monospace);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #012728;
+  color: #B5FFF0;
+  font-family: var(--font-mono, monospace);
+  overflow-x: hidden;
 }
 
-.prose pre code {
-  background: transparent;
-  padding: 0;
+/* Retro Pixel Grid Texture */
+.terminal-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 220, 192, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 220, 192, 0.07) 1px, transparent 1px);
 }
 
+.pixel-grid-subtle {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(0, 220, 192, 0.18) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 58, 59, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 58, 59, 0.4) 1px, transparent 1px);
+}
+
+.terminal-scanlines {
+  background: linear-gradient(
+    rgba(1, 39, 40, 0) 50%,
+    rgba(6, 27, 28, 0.4) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Mint & Turquoise Glows */
+.mint-glow-sm {
+  box-shadow: 0 0 12px rgba(106, 251, 216, 0.2);
+}
+
+.mint-glow-md {
+  box-shadow: 0 0 24px rgba(106, 251, 216, 0.3);
+}
+
+.mint-text-glow {
+  text-shadow: 0 0 8px rgba(106, 251, 216, 0.5);
+}
+
+.turquoise-glow-sm {
+  box-shadow: 0 0 14px rgba(0, 220, 192, 0.25);
+}
+
+.turquoise-glow-card {
+  box-shadow: 0 0 0 1px #00DCC0, 0 4px 20px rgba(0, 220, 192, 0.12);
+}
+
+/* Blinking terminal cursor */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  background-color: #6AFBD8;
+  vertical-align: -0.15em;
+  margin-left: 2px;
+  animation: blink 1.1s step-start infinite;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #012728;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003A3B;
+  border-radius: 2px;
+  border: 1px solid #00DCC0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00DCC0;
+}
+
+/* Selection */
+::selection {
+  background-color: #003A3B;
+  color: #6AFBD8;
+}
+
+/* Prose dark styling for blog posts */
+.prose {
+  color: #B5FFF0;
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: #6AFBD8;
+}
+.prose a {
+  color: #00DCC0;
+  text-decoration: underline;
+}
+.prose strong {
+  color: #6AFBD8;
+}
+.prose code {
+  color: #6AFBD8;
+  background-color: #061B1C;
+  border: 1px solid #00DCC0;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.2rem;
+}
 .prose pre {
-  background: transparent;
+  background-color: #061B1C;
+  border: 1px solid #00DCC0;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor {
+    animation: none;
+    opacity: 1;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

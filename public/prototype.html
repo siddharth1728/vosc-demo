@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vosc &bull; vasavi open source community</title>
+  <meta name="description" content="vasavi open source community. contribute. collaborate. innovate. official engineering manifesto and repository index.">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+  <!-- Google Fonts: Inter (800/900 Display) & JetBrains Mono (Strict Monospace Details) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', -apple-system, 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            black: '#000000',
+            white: '#FFFFFF',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ============================================================
+       STRUCTURAL TYPOGRAPHY & MONOCHROME BLUEPRINT
+       ============================================================ */
+    * {
+      border-radius: 0px !important;  /* Strictly no rounded corners */
+      box-shadow: none !important;     /* Strictly no drop shadows */
+    }
+
+    body {
+      background-color: #FFFFFF;
+      color: #000000;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Tabular row hover instant inversion */
+    .project-row {
+      transition: background-color 0.1s ease, color 0.1s ease;
+    }
+    .project-row:hover {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+    }
+    .project-row:hover * {
+      color: #FFFFFF !important;
+      border-color: #FFFFFF !important;
+    }
+
+    /* Mouse scroll animation */
+    @keyframes mouseScrollWheel {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(8px); opacity: 0; }
+    }
+    .mouse-wheel {
+      animation: mouseScrollWheel 1.6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-black selection:bg-black selection:text-white flex flex-col justify-between">
+
+  <!-- ============================================================
+       1. THE LEDGER HEADER
+       ============================================================ -->
+  <header class="w-full border-b border-black sticky top-0 bg-white z-50">
+    <div class="w-full px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Left: Wireframe minimalist book logo next to bold vosc -->
+      <a href="#hero" class="flex items-start gap-2.5 focus:outline-none">
+        <div class="mt-0.5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+            <path d="M6 6h10"></path>
+            <path d="M6 10h10"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-black text-xl tracking-tighter leading-none lowercase text-black">
+            vosc
+          </span>
+          <span class="font-mono text-[10px] text-neutral-500 lowercase tracking-tight mt-0.5">
+            contribute. collaborate. innovate.
+          </span>
+        </div>
+      </a>
+
+      <!-- Right: Lowercase monospace navigation links -->
+      <nav class="flex items-center gap-6 sm:gap-8 font-mono text-xs lowercase text-black">
+        <a href="#hero" class="hover:underline">home</a>
+        <a href="#projects" class="hover:underline">repositories</a>
+        <a href="#events" class="hover:underline">events</a>
+        <a href="#manifesto" class="hover:underline hidden sm:inline">announcements</a>
+        <a href="#footer" class="hover:underline">blog</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="flex-1 w-full">
+    
+    <!-- ============================================================
+         2. THE MANIFESTO HERO
+         ============================================================ -->
+    <section id="hero" class="w-full border-b border-black py-20 sm:py-28 md:py-36 px-4 sm:px-8 text-center flex flex-col items-center justify-center">
+      
+      <div class="max-w-6xl mx-auto space-y-6 sm:space-y-8 flex flex-col items-center">
+        
+        <!-- Colossal, Screen-Dominating Sans-Serif Header -->
+        <h1 class="text-8xl sm:text-[11rem] md:text-[14rem] lg:text-[16rem] font-black tracking-tighter text-black leading-none select-none">
+          VOSC
+        </h1>
+
+        <!-- Lowercase Monospace Subtitle -->
+        <div class="space-y-1">
+          <p class="font-mono text-sm sm:text-base md:text-lg lowercase tracking-tight text-black font-medium">
+            vasavi open source community
+          </p>
+          <p class="font-mono text-xs sm:text-sm text-neutral-500 lowercase">
+            vasavi college of engineering &bull; hyderabad, india
+          </p>
+        </div>
+
+        <!-- Solid Black Rectangular Button with White Monospace Text -->
+        <div class="pt-2">
+          <a 
+            href="#projects" 
+            class="px-8 py-3.5 bg-black text-white font-mono text-xs sm:text-sm lowercase tracking-wider inline-block hover:bg-neutral-800 transition-colors cursor-pointer"
+          >
+            explore &darr;
+          </a>
+        </div>
+
+        <!-- Minimalist Wireframe Mouse Icon Scroll Indicator -->
+        <div class="pt-10 sm:pt-14">
+          <a href="#projects" class="inline-flex flex-col items-center gap-2 group cursor-pointer focus:outline-none" aria-label="Scroll down">
+            <div class="w-5 h-8 border border-black flex justify-center pt-1.5">
+              <div class="w-1 h-2 bg-black mouse-wheel"></div>
+            </div>
+            <span class="font-mono text-[10px] lowercase text-neutral-500 group-hover:text-black transition-colors">
+              scroll
+            </span>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Meta Telemetry Line (Horizontal Split) -->
+    <div class="w-full border-b border-black font-mono text-xs lowercase px-4 sm:px-8 py-2.5 flex flex-wrap items-center justify-between gap-4 text-neutral-600 bg-white">
+      <div>chapter: vasavi college of engineering</div>
+      <div>status: all systems operational</div>
+      <div>members: 140+ active student contributors</div>
+      <div>license: mit open source</div>
+    </div>
+
+    <!-- ============================================================
+         3. THE PROJECT DIRECTORY (TABULAR LIST, NOT CARDS)
+         ============================================================ -->
+    <section id="projects" class="w-full">
+      
+      <!-- Section Header -->
+      <div class="w-full border-b border-black px-4 sm:px-8 py-4 flex items-center justify-between">
+        <h2 class="font-mono text-xs sm:text-sm lowercase font-bold tracking-tight text-black">
+          active_repositories
+        </h2>
+        <span class="font-mono text-xs text-neutral-500 lowercase">
+          [ 04 projects listed ]
+        </span>
+      </div>
+
+      <!-- Tabular List (Each Project is a Full-Width Row with 1px Bottom Border) -->
+      <div class="w-full divide-y divide-black border-b border-black">
+        
+        <!-- ROW 01: campus-flow -->
+        <a 
+          href="https://github.com/vasaviosc/campus-flow" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="project-row block w-full px-4 sm:px-8 py-6 sm:py-8 cursor-pointer"
+        >
+          <div class="w-full flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <!-- Left Side: Project Name & Description -->
+            <div class="space-y-1.5 max-w-3xl">
+              <div class="flex items-baseline gap-3">
+                <span class="font-black text-xl sm:text-2xl tracking-tight">
+                  campus-flow
+                </span>
+                <span class="font-mono text-[11px] opacity-75">
+                  / v2.4.1
+                </span>
+              </div>
+              <p class="font-mono text-xs sm:text-sm lowercase leading-relaxed text-neutral-600">
+                campus navigation, indoor classroom routing, and automated timetable management for vasavi college of engineering.
+              </p>
+            </div>
+
+            <!-- Right Side: Monospace Tags -->
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+              <span class="border border-black px-2 py-0.5 lowercase">[frontend]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[flutter]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[dart]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[help-wanted]</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ROW 02: vasaviosc.github.io -->
+        <a 
+          href="https://github.com/vasaviosc/vasaviosc.github.io" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="project-row block w-full px-4 sm:px-8 py-6 sm:py-8 cursor-pointer"
+        >
+          <div class="w-full flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1.5 max-w-3xl">
+              <div class="flex items-baseline gap-3">
+                <span class="font-black text-xl sm:text-2xl tracking-tight">
+                  vasaviosc.github.io
+                </span>
+                <span class="font-mono text-[11px] opacity-75">
+                  / v3.0.0
+                </span>
+              </div>
+              <p class="font-mono text-xs sm:text-sm lowercase leading-relaxed text-neutral-600">
+                the official web portal, documentation engine, and community hub for vasavi open source community.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+              <span class="border border-black px-2 py-0.5 lowercase">[frontend]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[typescript]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[react]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[good-first-issue]</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ROW 03: algoverse -->
+        <a 
+          href="https://github.com/vasaviosc/algoverse" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="project-row block w-full px-4 sm:px-8 py-6 sm:py-8 cursor-pointer"
+        >
+          <div class="w-full flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1.5 max-w-3xl">
+              <div class="flex items-baseline gap-3">
+                <span class="font-black text-xl sm:text-2xl tracking-tight">
+                  algoverse
+                </span>
+                <span class="font-mono text-[11px] opacity-75">
+                  / v1.9.0
+                </span>
+              </div>
+              <p class="font-mono text-xs sm:text-sm lowercase leading-relaxed text-neutral-600">
+                open pedagogical repository of competitive programming algorithms, advanced data structures, and system benchmarks in c++ and rust.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+              <span class="border border-black px-2 py-0.5 lowercase">[c++]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[rust]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[algorithms]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[help-wanted]</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ROW 04: vosc-bot -->
+        <a 
+          href="https://github.com/vasaviosc/vosc-bot" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="project-row block w-full px-4 sm:px-8 py-6 sm:py-8 cursor-pointer"
+        >
+          <div class="w-full flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1.5 max-w-3xl">
+              <div class="flex items-baseline gap-3">
+                <span class="font-black text-xl sm:text-2xl tracking-tight">
+                  vosc-bot
+                </span>
+                <span class="font-mono text-[11px] opacity-75">
+                  / v2.0.1
+                </span>
+              </div>
+              <p class="font-mono text-xs sm:text-sm lowercase leading-relaxed text-neutral-600">
+                automation bot for discord webhook broadcasting, pull request alerts, and student role synchronization.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+              <span class="border border-black px-2 py-0.5 lowercase">[python]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[fastapi]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[automation]</span>
+              <span class="border border-black px-2 py-0.5 lowercase">[active]</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         EVENTS LEDGER SECTION
+         ============================================================ -->
+    <section id="events" class="w-full border-b border-black">
+      <div class="w-full border-b border-black px-4 sm:px-8 py-4 flex items-center justify-between">
+        <h2 class="font-mono text-xs sm:text-sm lowercase font-bold tracking-tight text-black">
+          upcoming_events
+        </h2>
+        <span class="font-mono text-xs text-neutral-500 lowercase">
+          [ 2026 semester ]
+        </span>
+      </div>
+
+      <div class="w-full divide-y divide-black">
+        <div class="w-full px-4 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="space-y-0.5">
+            <span class="font-bold text-sm">open source bootcamp &bull; git fundamentals</span>
+            <p class="font-mono text-xs text-neutral-500 lowercase">hands-on rebasing, merge conflicts, and your first upstream pull request.</p>
+          </div>
+          <div class="font-mono text-xs text-right shrink-0">
+            <div>october 24, 2026 &bull; 10:00 ist</div>
+            <div class="text-neutral-500">ramanujan hall, vce campus</div>
+          </div>
+        </div>
+
+        <div class="w-full px-4 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="space-y-0.5">
+            <span class="font-bold text-sm">vosc midnight ship-a-thon 2026</span>
+            <p class="font-mono text-xs text-neutral-500 lowercase">overnight collaborative sprint solving campus bug bounties and open projects.</p>
+          </div>
+          <div class="font-mono text-xs text-right shrink-0">
+            <div>november 14, 2026 &bull; 20:00 ist</div>
+            <div class="text-neutral-500">campus lab + discord</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. THE STUDENT ACTION FOOTER
+         ============================================================ -->
+    <section id="manifesto" class="w-full border-b border-black py-20 sm:py-28 px-4 sm:px-8 text-center flex flex-col items-center justify-center space-y-8">
+      
+      <!-- Massive Sans-Serif Call to Action -->
+      <h2 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-black uppercase leading-none">
+        START BUILDING.
+      </h2>
+
+      <p class="font-mono text-xs sm:text-sm lowercase max-w-lg mx-auto text-neutral-600 leading-relaxed">
+        no gatekeeping. no corporate fluff. join vasavi developers writing code that ships to real users.
+      </p>
+
+      <!-- Two Stark Rectangular Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a 
+          href="https://discord.gg" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-8 py-3.5 bg-black text-white font-mono text-xs sm:text-sm lowercase tracking-wider hover:bg-neutral-800 transition-colors cursor-pointer"
+        >
+          join discord
+        </a>
+
+        <a 
+          href="https://github.com/vasaviosc" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-8 py-3.5 border border-black bg-white text-black font-mono text-xs sm:text-sm lowercase tracking-wider hover:bg-black hover:text-white transition-colors cursor-pointer"
+        >
+          view github
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       STARK MONOSPACE BOTTOM FOOTER
+       ============================================================ -->
+  <footer id="footer" class="w-full py-8 px-4 sm:px-8 font-mono text-xs lowercase text-neutral-600 space-y-4">
+    <div class="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div>
+        vasavi open source community // vasavi college of engineering // est. 2024
+      </div>
+      <div class="flex items-center gap-6 text-black">
+        <a href="https://github.com/vasaviosc" target="_blank" class="hover:underline">github</a>
+        <a href="https://discord.gg" target="_blank" class="hover:underline">discord</a>
+        <a href="https://vce.ac.in" target="_blank" class="hover:underline">vce.ac.in</a>
+        <a href="#hero" class="hover:underline">top &uarr;</a>
+      </div>
+    </div>
+    <div class="text-[11px] text-neutral-400">
+      &copy; 2026 vosc. open source released under mit license. ibrahimbagh, hyderabad, india.
+    </div>
+  </footer>
+
+</body>
+</html>
