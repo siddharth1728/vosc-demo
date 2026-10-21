@@ -37,12 +37,14 @@ export default function AnnouncementsPage() {
       <section className="py-14 sm:py-18 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {announcements.map((announcement) => (
-              <AnnouncementCard
-                key={announcement.id}
-                announcement={announcement}
-              />
-            ))}
+            {[...announcements]
+              .reverse()
+              .map((announcement) => (
+                <AnnouncementCard
+                  key={announcement.id}
+                  announcement={announcement}
+                />
+              ))}
           </div>
         </div>
       </section>

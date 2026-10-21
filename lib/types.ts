@@ -3,7 +3,9 @@ export interface Announcement {
   title: string;
   date: string;
   excerpt: string;
+  eventUrl?: string;
 }
+
 
 export interface Event {
   id: string;

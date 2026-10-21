@@ -6,8 +6,13 @@ import announcements from "@/data/announcements.json";
 import events from "@/data/events.json";
 
 export default function Home() {
-  // Display the top 3 featured events matching the mockup
-  const featuredEvents = events.slice(0, 3);
+  // Top 3 latest announcements matching upstream reverse order
+  const latestAnnouncements = [...announcements].reverse().slice(0, 3);
+
+  // Ongoing and upcoming active events
+  const ongoingEvents = events.filter((e) => e.status === "ongoing");
+  const upcomingEvents = events.filter((e) => e.status === "upcoming");
+  const featuredEvents = [...ongoingEvents, ...upcomingEvents].slice(0, 3);
 
   // Verified community repositories
   const verifiedProjects = [
@@ -86,7 +91,7 @@ export default function Home() {
               {/* Pixel-bordered Explore Button directly beneath the open book */}
               <div className="mt-4 sm:mt-5">
                 <a
-                  href="#upcoming-events"
+                  href="#announcements"
                   className="inline-flex items-center justify-center px-7 py-2 rounded-sm bg-[#061B1C] text-[#B5FFF0] border border-[#00DCC0] hover:border-[#6AFBD8] hover:text-[#6AFBD8] hover:shadow-[0_0_14px_rgba(0,220,192,0.3)] font-mono text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200"
                 >
                   explore
@@ -126,7 +131,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------- 2. UPCOMING EVENTS SECTION -------------------- */}
+      {/* -------------------- 2. ANNOUNCEMENTS SECTION -------------------- */}
+      <section
+        id="announcements"
+        className="relative py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00DCC0] bg-[#003A3B]/20 terminal-grid"
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+            <div>
+              <div className="text-xs font-mono text-[#6AFBD8] uppercase tracking-wider mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#6AFBD8] animate-pulse" />
+                <span>// SYSTEM BROADCASTS &amp; DISPATCHES</span>
+              </div>
+              <h2 className="font-pixel text-xl sm:text-2xl text-[#6AFBD8] tracking-wider uppercase flex items-center gap-2">
+                <span className="text-[#00DCC0]">&gt;</span> ANNOUNCEMENTS
+              </h2>
+            </div>
+
+            <Link
+              href="/announcements"
+              className="text-xs sm:text-sm font-mono text-[#B5FFF0] hover:text-[#6AFBD8] hover:underline flex items-center gap-1.5 transition-colors"
+            >
+              <span>[ view all announcements</span>
+              <span>→ ]</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {latestAnnouncements.map((announcement) => (
+              <AnnouncementCard
+                key={announcement.id}
+                announcement={announcement}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------- 3. UPCOMING & ONGOING EVENTS SECTION -------------------- */}
       <section
         id="upcoming-events"
         className="relative py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00DCC0] bg-[#003A3B]/30 terminal-grid"
@@ -385,41 +427,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* -------------------- 5. ANNOUNCEMENTS SECTION -------------------- */}
-      <section
-        id="announcements"
-        className="py-16 sm:py-20 px-4 sm:px-6"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-            <div>
-              <div className="text-xs font-mono text-[#6AFBD8] uppercase tracking-wider mb-2">
-                // SYSTEM BROADCASTS
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#B5FFF0]">
-                ANNOUNCEMENTS
-              </h2>
-            </div>
-
-            <Link
-              href="/announcements"
-              className="inline-flex items-center gap-2 text-xs font-mono text-[#6AFBD8] hover:underline"
-            >
-              <span>[ view all dispatches → ]</span>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {announcements.slice(0, 2).map((announcement) => (
-              <AnnouncementCard
-                key={announcement.id}
-                announcement={announcement}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
+
