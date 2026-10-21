@@ -5,13 +5,13 @@ import React from "react";
 export default function HeroCircuitIllustration() {
   return (
     <div className="relative w-full max-w-[580px] lg:max-w-[620px] mx-auto select-none flex flex-col items-center justify-center">
-      {/* Radiant ambient teal/cyan aura behind the book and circuits */}
+      {/* Radiant ambient teal/cyan aura behind the book and circuits (Layer D) */}
       <div
-        className="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[360px] bg-[#00DCC0]/15 blur-[100px] pointer-events-none rounded-full"
+        className="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[360px] bg-[#00DCC0]/15 blur-[100px] pointer-events-none rounded-full vosc-ambient-breathe-1"
         aria-hidden="true"
       />
       <div
-        className="absolute top-[75%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[160px] bg-[#6AFBD8]/20 blur-[60px] pointer-events-none rounded-full"
+        className="absolute top-[75%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[160px] bg-[#6AFBD8]/20 blur-[60px] pointer-events-none rounded-full vosc-ambient-breathe-2"
         aria-hidden="true"
       />
 
@@ -89,7 +89,7 @@ export default function HeroCircuitIllustration() {
              ============================================================ */}
 
         {/* --- BOX 1 (FAR LEFT): TERMINAL PROMPT (>_) --- */}
-        <g id="box-terminal" className="transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+        <g id="box-terminal" className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_12px_rgba(106,251,216,0.35)]">
           <rect
             x="45"
             y="168"
@@ -99,6 +99,7 @@ export default function HeroCircuitIllustration() {
             fill="url(#voscModuleBg)"
             stroke="#00DCC0"
             strokeWidth="1.75"
+            className="transition-colors duration-300 group-hover:stroke-[#6AFBD8]"
           />
           {/* Window Title Bar */}
           <line x1="45" y1="184" x2="133" y2="184" stroke="#003A3B" strokeWidth="1.2" />
@@ -123,11 +124,12 @@ export default function HeroCircuitIllustration() {
             stroke="#6AFBD8"
             strokeWidth="2.4"
             strokeLinecap="round"
+            className="group-hover:stroke-[#FFFFFF] transition-colors duration-300"
           />
         </g>
 
         {/* --- BOX 2 (MID LEFT): COMMUNITY (3 AVATARS) --- */}
-        <g id="box-community" className="transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+        <g id="box-community" className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_12px_rgba(106,251,216,0.35)]">
           <rect
             x="148"
             y="76"
@@ -137,6 +139,7 @@ export default function HeroCircuitIllustration() {
             fill="url(#voscModuleBg)"
             stroke="#00DCC0"
             strokeWidth="1.75"
+            className="transition-colors duration-300 group-hover:stroke-[#6AFBD8]"
           />
           <line x1="148" y1="92" x2="238" y2="92" stroke="#003A3B" strokeWidth="1.2" />
           <circle cx="158" cy="84" r="2.2" fill="#00DCC0" />
@@ -149,13 +152,13 @@ export default function HeroCircuitIllustration() {
             <path d="M172 122 C172 116 175 114 179 114 C183 114 186 116 186 122 Z" fill="#00DCC0" />
             <circle cx="207" cy="105" r="3.5" fill="#00DCC0" />
             <path d="M200 122 C200 116 203 114 207 114 C211 114 214 116 214 122 Z" fill="#00DCC0" />
-            <circle cx="193" cy="102" r="4.5" fill="#6AFBD8" stroke="#031517" strokeWidth="1" />
+            <circle cx="193" cy="102" r="4.5" fill="#6AFBD8" stroke="#031517" strokeWidth="1" className="group-hover:fill-[#FFFFFF] transition-colors duration-300" />
             <path d="M184 123 C184 114 187 111 193 111 C199 111 202 114 202 123 Z" fill="#6AFBD8" stroke="#031517" strokeWidth="1" />
           </g>
         </g>
 
         {/* --- BOX 3 (CENTER TOP - PINNACLE): CODE EDITOR (</>) --- */}
-        <g id="box-code" className="transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+        <g id="box-code" className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_18px_rgba(106,251,216,0.5)]">
           <rect
             x="294"
             y="20"
@@ -166,6 +169,7 @@ export default function HeroCircuitIllustration() {
             stroke="#6AFBD8"
             strokeWidth="2"
             filter="url(#voscNodeGlow)"
+            className="transition-colors duration-300 group-hover:stroke-[#FFFFFF]"
           />
           <line x1="294" y1="37" x2="386" y2="37" stroke="#003A3B" strokeWidth="1.2" />
           <circle cx="305" cy="29" r="2.2" fill="#6AFBD8" />
@@ -173,7 +177,7 @@ export default function HeroCircuitIllustration() {
           <circle cx="319" cy="29" r="2.2" fill="#003A3B" />
 
           {/* Code Icon: </> */}
-          <g stroke="#6AFBD8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="#6AFBD8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:scale-105 origin-center">
             <path d="M324 51 L315 57 L324 63" />
             <path d="M344 47 L336 67" />
             <path d="M356 51 L365 57 L356 63" />
@@ -181,7 +185,7 @@ export default function HeroCircuitIllustration() {
         </g>
 
         {/* --- BOX 4 (MID RIGHT): SETTINGS / ARCHITECTURE (GEAR ⚙️) --- */}
-        <g id="box-settings" className="transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+        <g id="box-settings" className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_12px_rgba(106,251,216,0.35)]">
           <rect
             x="442"
             y="76"
@@ -191,6 +195,7 @@ export default function HeroCircuitIllustration() {
             fill="url(#voscModuleBg)"
             stroke="#00DCC0"
             strokeWidth="1.75"
+            className="transition-colors duration-300 group-hover:stroke-[#6AFBD8]"
           />
           <line x1="442" y1="92" x2="532" y2="92" stroke="#003A3B" strokeWidth="1.2" />
           <circle cx="452" cy="84" r="2.2" fill="#00DCC0" />
@@ -198,7 +203,7 @@ export default function HeroCircuitIllustration() {
           <circle cx="466" cy="84" r="2.2" fill="#003A3B" />
 
           {/* Precision 8-Tooth Gear Icon */}
-          <g transform="translate(487, 112)">
+          <g transform="translate(487, 112)" className="vosc-gear-spin">
             <circle cx="0" cy="0" r="4.2" fill="#031517" stroke="#6AFBD8" strokeWidth="2" />
             <circle cx="0" cy="0" r="8" fill="none" stroke="#00DCC0" strokeWidth="1.5" />
             <circle
@@ -214,7 +219,7 @@ export default function HeroCircuitIllustration() {
         </g>
 
         {/* --- BOX 5 (FAR RIGHT): VERSION CONTROL / GIT --- */}
-        <g id="box-git" className="transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+        <g id="box-git" className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-[0_0_12px_rgba(106,251,216,0.35)]">
           <rect
             x="547"
             y="168"
@@ -224,6 +229,7 @@ export default function HeroCircuitIllustration() {
             fill="url(#voscModuleBg)"
             stroke="#00DCC0"
             strokeWidth="1.75"
+            className="transition-colors duration-300 group-hover:stroke-[#6AFBD8]"
           />
           <line x1="547" y1="184" x2="635" y2="184" stroke="#003A3B" strokeWidth="1.2" />
           <circle cx="557" cy="176" r="2.2" fill="#00DCC0" />
@@ -242,6 +248,7 @@ export default function HeroCircuitIllustration() {
               fill="#031517"
               stroke="#6AFBD8"
               strokeWidth="1.8"
+              className="transition-colors duration-300 group-hover:stroke-[#FFFFFF]"
             />
             <line x1="585" y1="191" x2="585" y2="207" stroke="#6AFBD8" strokeWidth="1.8" />
             <path
@@ -295,26 +302,44 @@ export default function HeroCircuitIllustration() {
           <path d="M 362 310 V 265 L 422 205 H 485" />
         </g>
 
-        {/* Solder Ring Via Nodes (9 White Rings with Hollow Dark Center) */}
+        {/* --- LIGHT PULSE OVERLAYS (LAYERS A & C) --- */}
+        <g pointerEvents="none" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+          {/* Autonomous ambient pulses (Layer A) */}
+          <path d="M 324 310 V 244 L 230 150" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-ambient-stem-pulse-1" />
+          <path d="M 356 310 V 244 L 450 150" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-ambient-stem-pulse-2" />
+
+          {/* Coordinated Book-to-Circuit Sequence Pulses (Layer C, Step 3) */}
+          <path d="M 340 310 V 99" stroke="#FFFFFF" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-0" />
+          <path d="M 336 310 V 151 L 315 130" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-near" />
+          <path d="M 344 310 V 151 L 365 130" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-near" />
+          <path d="M 330 310 V 220 L 285 175" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-mid" />
+          <path d="M 350 310 V 220 L 395 175" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-mid" />
+          <path d="M 324 310 V 244 L 230 150" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-mid" />
+          <path d="M 356 310 V 244 L 450 150" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-mid" />
+          <path d="M 318 310 V 265 L 258 205 H 195" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-outer" />
+          <path d="M 362 310 V 265 L 422 205 H 485" stroke="#6AFBD8" filter="url(#voscNodeGlow)" className="vosc-pulse-stem-outer" />
+        </g>
+
+        {/* Solder Ring Via Nodes (9 White Rings with Hollow Dark Center - Layer C, Step 4) */}
         <g stroke="#FFFFFF" strokeWidth="2.6" fill="#012728" filter="url(#voscNodeGlow)">
           {/* Outermost Wings */}
-          <circle cx="195" cy="205" r="7" />
-          <circle cx="485" cy="205" r="7" />
+          <circle cx="195" cy="205" r="7" className="vosc-node-seq-outer" />
+          <circle cx="485" cy="205" r="7" className="vosc-node-seq-outer" />
 
           {/* Mid High Peaks */}
-          <circle cx="230" cy="150" r="7" />
-          <circle cx="450" cy="150" r="7" />
+          <circle cx="230" cy="150" r="7" className="vosc-node-seq-mid" />
+          <circle cx="450" cy="150" r="7" className="vosc-node-seq-mid" />
 
           {/* Inner Dips */}
-          <circle cx="285" cy="175" r="7" />
-          <circle cx="395" cy="175" r="7" />
+          <circle cx="285" cy="175" r="7" className="vosc-node-seq-inner" />
+          <circle cx="395" cy="175" r="7" className="vosc-node-seq-inner" />
 
           {/* Near-Center High Peaks */}
-          <circle cx="315" cy="130" r="7" />
-          <circle cx="365" cy="130" r="7" />
+          <circle cx="315" cy="130" r="7" className="vosc-node-seq-near" />
+          <circle cx="365" cy="130" r="7" className="vosc-node-seq-near" />
 
           {/* Central Pinnacle Node */}
-          <circle cx="340" cy="92" r="7.5" />
+          <circle cx="340" cy="92" r="7.5" className="vosc-node-seq-pinnacle" />
         </g>
 
         {/* Inner Cyan Via Ring Accents (Refining the Hollow PCB Via Look) */}
@@ -337,7 +362,7 @@ export default function HeroCircuitIllustration() {
              ============================================================ */}
         <g id="vosc-illuminated-book" className="transition-transform duration-300 hover:scale-[1.015]">
           
-          {/* A. BROAD UNDER-BOOK ILLUMINATION HALO */}
+          {/* A. BROAD UNDER-BOOK ILLUMINATION HALO (Layer C, Step 1) */}
           <ellipse
             cx="340"
             cy="365"
@@ -346,6 +371,7 @@ export default function HeroCircuitIllustration() {
             fill="#00DCC0"
             opacity="0.22"
             filter="url(#voscBookGlow)"
+            className="vosc-book-aura-pulse"
           />
 
           {/* B. HARDCOVER BASE BINDING & CENTRAL SPINE NOTCH */}
@@ -454,6 +480,7 @@ export default function HeroCircuitIllustration() {
             strokeWidth="3.2"
             strokeLinecap="round"
             fill="none"
+            className="vosc-book-edge-glow"
           />
 
           {/* Right Open Page Face */}
@@ -475,6 +502,7 @@ export default function HeroCircuitIllustration() {
             strokeWidth="3.2"
             strokeLinecap="round"
             fill="none"
+            className="vosc-book-edge-glow"
           />
 
           {/* Left Page Authentic Text Lines (Subtle code/rule indentations) */}
@@ -509,31 +537,50 @@ export default function HeroCircuitIllustration() {
             strokeWidth="2.2"
             strokeLinecap="round"
           />
+
+          {/* Focal Central Cleft Pulse Node (Layer C, Step 2) */}
+          <circle
+            cx="340"
+            cy="310"
+            r="5"
+            fill="#FFFFFF"
+            stroke="#6AFBD8"
+            strokeWidth="2.5"
+            filter="url(#voscNodeGlow)"
+            className="vosc-cleft-pulse"
+            pointerEvents="none"
+          />
         </g>
 
         {/* ============================================================
              4. FLOATING DATA PACKETS & CYBER PARTICLES (ATMOSPHERE)
              ============================================================ */}
-        <g fill="#6AFBD8" opacity="0.9">
+        <g fill="#6AFBD8" opacity="0.9" pointerEvents="none">
           {/* Top spark cluster */}
-          <rect x="270" y="44" width="4.5" height="4.5" fill="#00DCC0" />
-          <rect x="408" y="44" width="4.5" height="4.5" fill="#6AFBD8" />
-          <rect x="135" y="60" width="3.5" height="3.5" fill="#00DCC0" />
-          <rect x="540" y="60" width="3.5" height="3.5" fill="#6AFBD8" />
+          <g className="vosc-spark-twinkle-1">
+            <rect x="270" y="44" width="4.5" height="4.5" fill="#00DCC0" />
+            <rect x="408" y="44" width="4.5" height="4.5" fill="#6AFBD8" />
+            <rect x="135" y="60" width="3.5" height="3.5" fill="#00DCC0" />
+            <rect x="540" y="60" width="3.5" height="3.5" fill="#6AFBD8" />
+          </g>
 
           {/* Mid spark cluster */}
-          <rect x="255" y="140" width="3" height="3" fill="#FFFFFF" />
-          <rect x="420" y="140" width="3" height="3" fill="#FFFFFF" />
-          <rect x="325" y="200" width="4" height="4" fill="#6AFBD8" />
-          <rect x="352" y="200" width="4" height="4" fill="#00DCC0" />
+          <g className="vosc-spark-twinkle-2">
+            <rect x="255" y="140" width="3" height="3" fill="#FFFFFF" />
+            <rect x="420" y="140" width="3" height="3" fill="#FFFFFF" />
+            <rect x="325" y="200" width="4" height="4" fill="#6AFBD8" />
+            <rect x="352" y="200" width="4" height="4" fill="#00DCC0" />
+          </g>
 
           {/* Lower book spark cluster */}
-          <rect x="110" y="278" width="4.5" height="4.5" fill="#00DCC0" />
-          <rect x="565" y="278" width="4.5" height="4.5" fill="#6AFBD8" />
-          <rect x="120" y="340" width="3.5" height="3.5" fill="#FFFFFF" />
-          <rect x="555" y="340" width="3.5" height="3.5" fill="#00DCC0" />
-          <rect x="235" y="398" width="3.5" height="3.5" fill="#003A3B" />
-          <rect x="445" y="398" width="3.5" height="3.5" fill="#003A3B" />
+          <g className="vosc-spark-twinkle-1">
+            <rect x="110" y="278" width="4.5" height="4.5" fill="#00DCC0" />
+            <rect x="565" y="278" width="4.5" height="4.5" fill="#6AFBD8" />
+            <rect x="120" y="340" width="3.5" height="3.5" fill="#FFFFFF" />
+            <rect x="555" y="340" width="3.5" height="3.5" fill="#00DCC0" />
+            <rect x="235" y="398" width="3.5" height="3.5" fill="#003A3B" />
+            <rect x="445" y="398" width="3.5" height="3.5" fill="#003A3B" />
+          </g>
         </g>
       </svg>
     </div>

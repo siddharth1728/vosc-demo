@@ -62,16 +62,16 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors duration-150 relative py-1 ${
+                  className={`transition-all duration-200 relative py-1 ${
                     active
-                      ? "text-[#6AFBD8] font-bold"
+                      ? "text-[#6AFBD8] font-bold drop-shadow-[0_0_6px_rgba(106,251,216,0.4)]"
                       : "text-[#B5FFF0] hover:text-[#6AFBD8]"
-                  } focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#00DCC0]`}
+                  } focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#6AFBD8] rounded`}
                   aria-current={active ? "page" : undefined}
                 >
                   {link.label}
                   {active && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00DCC0]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#6AFBD8] shadow-[0_0_8px_rgba(106,251,216,0.7)] rounded-full" />
                   )}
                 </Link>
               );

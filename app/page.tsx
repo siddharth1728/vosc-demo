@@ -38,22 +38,22 @@ export default function Home() {
         {/* Decorative Floating Retro Pixel Blocks across Hero */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           {/* Top Left Pixels */}
-          <div className="absolute top-8 left-[10%] w-3 h-3 bg-[#00DCC0]/30" />
-          <div className="absolute top-16 left-[18%] w-4 h-4 bg-[#003A3B]" />
-          <div className="absolute top-24 left-[7%] w-2.5 h-2.5 bg-[#6AFBD8]/40" />
-          <div className="absolute top-36 left-[22%] w-3.5 h-3.5 bg-[#061B1C]" />
+          <div className="absolute top-8 left-[10%] w-3 h-3 bg-[#00DCC0]/30 vosc-particle-drift-1" />
+          <div className="absolute top-16 left-[18%] w-4 h-4 bg-[#003A3B] vosc-particle-drift-2" />
+          <div className="absolute top-24 left-[7%] w-2.5 h-2.5 bg-[#6AFBD8]/40 vosc-particle-drift-3" />
+          <div className="absolute top-36 left-[22%] w-3.5 h-3.5 bg-[#061B1C] vosc-particle-drift-4" />
 
           {/* Top Right Pixels */}
-          <div className="absolute top-10 right-[15%] w-3.5 h-3.5 bg-[#003A3B]" />
-          <div className="absolute top-20 right-[25%] w-2.5 h-2.5 bg-[#00DCC0]/35" />
-          <div className="absolute top-32 right-[8%] w-4 h-4 bg-[#061B1C]" />
-          <div className="absolute top-44 right-[20%] w-3 h-3 bg-[#6AFBD8]/30" />
+          <div className="absolute top-10 right-[15%] w-3.5 h-3.5 bg-[#003A3B] vosc-particle-drift-2" />
+          <div className="absolute top-20 right-[25%] w-2.5 h-2.5 bg-[#00DCC0]/35 vosc-particle-drift-1" />
+          <div className="absolute top-32 right-[8%] w-4 h-4 bg-[#061B1C] vosc-particle-drift-4" />
+          <div className="absolute top-44 right-[20%] w-3 h-3 bg-[#6AFBD8]/30 vosc-particle-drift-3" />
 
           {/* Mid & Lower Pixels */}
-          <div className="absolute bottom-20 left-[14%] w-3 h-3 bg-[#003A3B]" />
-          <div className="absolute bottom-12 left-[28%] w-2.5 h-2.5 bg-[#00DCC0]/25" />
-          <div className="absolute bottom-16 right-[18%] w-4 h-4 bg-[#003A3B]" />
-          <div className="absolute bottom-24 right-[28%] w-2 h-2 bg-[#6AFBD8]/50" />
+          <div className="absolute bottom-20 left-[14%] w-3 h-3 bg-[#003A3B] vosc-particle-drift-3" />
+          <div className="absolute bottom-12 left-[28%] w-2.5 h-2.5 bg-[#00DCC0]/25 vosc-particle-drift-1" />
+          <div className="absolute bottom-16 right-[18%] w-4 h-4 bg-[#003A3B] vosc-particle-drift-2" />
+          <div className="absolute bottom-24 right-[28%] w-2 h-2 bg-[#6AFBD8]/50 vosc-particle-drift-4" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -92,7 +92,7 @@ export default function Home() {
               <div className="mt-4 sm:mt-5">
                 <a
                   href="#announcements"
-                  className="inline-flex items-center justify-center px-7 py-2 rounded-sm bg-[#061B1C] text-[#B5FFF0] border border-[#00DCC0] hover:border-[#6AFBD8] hover:text-[#6AFBD8] hover:shadow-[0_0_14px_rgba(0,220,192,0.3)] font-mono text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200"
+                  className="inline-flex items-center justify-center px-7 py-2 rounded-sm bg-[#061B1C] text-[#B5FFF0] border border-[#00DCC0] hover:bg-[#00DCC0]/15 hover:border-[#6AFBD8] hover:text-[#6AFBD8] hover:shadow-[0_0_20px_rgba(106,251,216,0.4)] active:scale-95 transition-all duration-300 font-mono text-xs sm:text-sm font-semibold tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6AFBD8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#012728]"
                 >
                   explore
                 </a>
