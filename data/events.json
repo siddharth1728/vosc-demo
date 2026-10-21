@@ -1,11 +1,49 @@
 [
   {
     "id": "1",
+    "slug": "git-session",
+    "title": "Git Session",
+    "date": "Sep 11, 2026, 8:00 PM",
+    "status": "past",
+    "description": "Learn the basics of version control and Git workflows. This session introduces students to Git, GitHub, repository management, and collaborative development.",
+    "poster": "/git-session/poster.jpeg",
+    "gallery": [
+      "/git-session/img1.jpeg",
+      "/git-session/img2.jpeg",
+      "/git-session/img3.jpeg",
+      "/git-session/img4.jpeg"
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "domain-discovery",
+    "title": "Domain Discovery",
+    "date": "Oct 5, 2026, 1:00 PM",
+    "status": "past",
+    "description": "Find your domain and begin your open-source journey. Domain Discovery helps students explore different technical domains, discover their interests, and find opportunities to contribute to open source.",
+    "poster": "/domain-discovery/poster.png",
+    "gallery": [
+      "/domain-discovery/img1.jpg",
+      "/domain-discovery/img2.jpg",
+      "/domain-discovery/img3.jpg",
+      "/domain-discovery/img4.jpg"
+    ],
+    "winners": [
+      {
+        "teamName": "To Be Announced",
+        "members": [],
+        "position": "To Be Announced"
+      }
+    ],
+    "instagram": "https://www.instagram.com/p/Dd_pqs3n4LE/?cplk=MTh4N2J4YXV5aWhvcw=="
+  },
+  {
+    "id": "3",
     "slug": "openquest",
     "title": "OpenQuest — Innovation Challenge",
     "date": "Oct 27, 2026, 10:00 AM – 4:00 PM",
     "status": "ongoing",
-    "description": "OpenQuest is a flagship hackathon organized by Vasavi Open Source Community (VOSC) at Vasavi College of Engineering. Form teams of 3–4 members, choose from six technology domains, identify a real-world problem, and build an innovative working prototype. The event encourages open-source collaboration, responsible innovation, and practical problem-solving.",
+    "description": "OpenQuest is a hackathon organized by Vasavi Open Source Community (VOSC) at Vasavi College of Engineering. Form teams of 3–4 members, choose from six technology domains, identify a real-world problem, and build an innovative working prototype. The event encourages open-source collaboration, responsible innovation, and practical problem-solving.",
     "poster": "/openquest/poster.jpeg",
     "gallery": [],
     "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeOdUTu8shPot39K4X97GDLA-9VHPqHUusytOad4oih8vBXTA/viewform",
@@ -37,69 +75,7 @@
     ]
   },
   {
-    "id": "2",
-    "slug": "open-source-contribution-bootcamp",
-    "title": "Open Source Contribution Bootcamp",
-    "date": "Nov 08, 2026",
-    "status": "past",
-    "description": "Join us in contributing to real open-source projects. Week-long intensive."
-  },
-  {
-    "id": "3",
-    "slug": "web-dev-with-react",
-    "title": "Web Dev with React",
-    "date": "Nov 15, 2026",
-    "status": "past",
-    "description": "Building modern web applications with React. Full workshop recording available."
-  },
-  {
     "id": "4",
-    "slug": "hack-and-build",
-    "title": "Hack & Build",
-    "date": "Nov 29, 2026",
-    "status": "upcoming",
-    "description": "Collaborate, build and showcase your open-source projects. All skill levels welcome."
-  },
-  {
-    "id": "5",
-    "slug": "domain-discovery",
-    "title": "Domain Discovery",
-    "date": "Oct 05, 2026, 1:00 PM",
-    "status": "past",
-    "description": "Find your domain and begin your open-source journey. Domain Discovery helps students explore different technical domains, discover their interests, and find opportunities to contribute to open source.",
-    "poster": "/domain-discovery/poster.png",
-    "gallery": [
-      "/domain-discovery/img1.jpg",
-      "/domain-discovery/img2.jpg",
-      "/domain-discovery/img3.jpg",
-      "/domain-discovery/img4.jpg"
-    ],
-    "winners": [
-      {
-        "teamName": "To Be Announced",
-        "members": [],
-        "position": "To Be Announced"
-      }
-    ],
-    "instagram": "https://www.instagram.com/p/Dd_pqs3n4LE/?cplk=MTh4N2J4YXV5aWhvcw=="
-  },
-  {
-    "id": "6",
-    "slug": "git-session",
-    "title": "Git Session",
-    "date": "Sep 11, 2026, 8:00 PM",
-    "status": "past",
-    "description": "Learn the basics of version control and Git workflows. This session introduces students to Git, GitHub, repository management, and collaborative development.",
-    "poster": "/git-session/poster.jpeg",
-    "gallery": [
-      "/git-session/img1.jpeg",
-      "/git-session/img2.jpeg",
-      "/git-session/img3.jpeg",
-      "/git-session/img4.jpeg"
-    ]
-  },
-  {
-    "id": "7",
     "slug": "repoquest",
     "title": "RepoQuest",
     "date": "Oct 31, 2027, 8:00 PM",
@@ -107,7 +83,7 @@
     "description": "Learn to navigate and understand large repositories and codebases."
   },
   {
-    "id": "8",
+    "id": "5",
     "slug": "proposal-craft",
     "title": "ProposalCraft",
     "date": "Mar 21, 2027, 02:30 PM",
@@ -115,15 +91,15 @@
     "description": "Learn how to structure effective proposals."
   },
   {
-    "id": "9",
+    "id": "6",
     "slug": "bug-blitz",
     "title": "Bug Blitz",
-    "date": "Apr 04, 2027, 02:30 PM",
+    "date": "Apr 4, 2027, 02:30 PM",
     "status": "upcoming",
     "description": "Learn how to identify and fix bugs efficiently."
   },
   {
-    "id": "10",
+    "id": "7",
     "slug": "great-merge",
     "title": "The Great Merge",
     "date": "Apr 21, 2027, 02:30 PM",
