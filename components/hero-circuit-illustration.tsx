@@ -260,7 +260,7 @@ export default function HeroCircuitIllustration() {
         </g>
 
         {/* ============================================================
-             2. THE CLUSTER OF CIRCUIT-LIKE TRACES RISING ABOVE THE BOOK
+             2. ELEGANT, NEAT PCB CIRCUIT TREE (SYMMETRICAL & ORDERED)
              ============================================================ */}
         <g
           stroke="url(#voscCircuitGrad)"
@@ -268,58 +268,61 @@ export default function HeroCircuitIllustration() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Main Central Trunk rising directly to Code Editor */}
+          {/* A. Central Trunk to Top Code Box */}
           <path d="M 340 310 V 88" />
 
-          {/* Symmetrical Left Branches */}
-          <path d="M 328 308 V 170 L 295 137 H 200 V 142" />
-          <path d="M 314 306 V 205 L 260 165 H 180" />
-          <path d="M 300 306 V 238 L 225 198 H 132 V 202" />
-          <path d="M 286 306 V 262 L 200 220 H 132" />
+          {/* B. Inner Left Branch to Community Box */}
+          <path d="M 328 310 V 226 L 244 142" />
 
-          {/* Symmetrical Right Branches */}
-          <path d="M 352 308 V 170 L 385 137 H 480 V 142" />
-          <path d="M 366 306 V 205 L 420 165 H 500" />
-          <path d="M 380 306 V 238 L 455 198 H 548 V 202" />
-          <path d="M 394 306 V 262 L 480 220 H 548" />
+          {/* C. Inner Right Branch to Settings/Gear Box (Exact Symmetrical Mirror) */}
+          <path d="M 352 310 V 226 L 436 142" />
 
-          {/* Diagonal Sprouting Micro-Traces with Terminal Pads */}
-          <path d="M 295 137 L 275 117" />
-          <path d="M 385 137 L 405 117" />
-          <path d="M 260 165 L 240 145" />
-          <path d="M 420 165 L 440 145" />
-          <path d="M 225 198 L 205 178" />
-          <path d="M 455 198 L 475 178" />
+          {/* D. Outer Left Branch to Terminal Box (Clean 45° Chamfer into Horizontal Port) */}
+          <path d="M 316 310 V 246 L 271 201 H 132" />
+
+          {/* E. Outer Right Branch to Git Box (Clean 45° Chamfer into Horizontal Port) */}
+          <path d="M 364 310 V 246 L 409 201 H 548" />
+
+          {/* F. Balanced 45° Sprouting Foliage Stubs */}
+          {/* Upper Trunk Sprout Pair */}
+          <path d="M 340 156 L 312 128" />
+          <path d="M 340 156 L 368 128" />
+
+          {/* Mid Trunk Sprout Pair */}
+          <path d="M 340 216 L 298 174" />
+          <path d="M 340 216 L 382 174" />
+
+          {/* Mid Wing Sprout Pair */}
+          <path d="M 286 184 L 260 158" />
+          <path d="M 394 184 L 420 158" />
+
+          {/* Lower Outer Sprout Pair */}
+          <path d="M 271 201 L 243 229" />
+          <path d="M 409 201 L 437 229" />
         </g>
 
         {/* Luminous Glowing Circuit Vias / Solder Pads */}
         <g fill="#FFFFFF" stroke="#00DCC0" strokeWidth="2">
-          {/* Central Trunk Nodes */}
-          <circle cx="340" cy="180" r="4.2" filter="url(#voscNodeGlow)" />
-          <circle cx="340" cy="130" r="3.5" />
-          <circle cx="340" cy="92" r="4" filter="url(#voscNodeGlow)" />
+          {/* Box Connector Ports (Terminating Nodes) */}
+          <circle cx="340" cy="88" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="244" cy="142" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="436" cy="142" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="132" cy="201" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="548" cy="201" r="3.5" filter="url(#voscNodeGlow)" />
 
-          {/* Left Arc Junction Nodes */}
-          <circle cx="275" cy="117" r="4" filter="url(#voscNodeGlow)" />
-          <circle cx="240" cy="145" r="3.8" filter="url(#voscNodeGlow)" />
-          <circle cx="205" cy="178" r="3.8" filter="url(#voscNodeGlow)" />
-          <circle cx="295" cy="137" r="3.2" />
-          <circle cx="260" cy="165" r="3.2" />
-          <circle cx="225" cy="198" r="3.2" />
+          {/* Symmetrical Terminal Stubs Nodes */}
+          <circle cx="312" cy="128" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="368" cy="128" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="298" cy="174" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="382" cy="174" r="3.5" filter="url(#voscNodeGlow)" />
+          <circle cx="260" cy="158" r="3" />
+          <circle cx="420" cy="158" r="3" />
+          <circle cx="243" cy="229" r="3" />
+          <circle cx="437" cy="229" r="3" />
 
-          {/* Right Arc Junction Nodes */}
-          <circle cx="405" cy="117" r="4" filter="url(#voscNodeGlow)" />
-          <circle cx="440" cy="145" r="3.8" filter="url(#voscNodeGlow)" />
-          <circle cx="475" cy="178" r="3.8" filter="url(#voscNodeGlow)" />
-          <circle cx="385" cy="137" r="3.2" />
-          <circle cx="420" cy="165" r="3.2" />
-          <circle cx="455" cy="198" r="3.2" />
-
-          {/* Module Ingress Nodes */}
-          <circle cx="200" cy="142" r="3.2" />
-          <circle cx="480" cy="142" r="3.2" />
-          <circle cx="132" cy="202" r="3.2" />
-          <circle cx="548" cy="202" r="3.2" />
+          {/* Trunk Junction Dots */}
+          <circle cx="340" cy="156" r="2.5" fill="#6AFBD8" stroke="#012728" strokeWidth="1" />
+          <circle cx="340" cy="216" r="2.5" fill="#6AFBD8" stroke="#012728" strokeWidth="1" />
         </g>
 
         {/* ============================================================
