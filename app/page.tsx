@@ -28,7 +28,7 @@ export default function Home() {
       {/* -------------------- 1. HERO SECTION -------------------- */}
       <section
         id="hero"
-        className="relative pt-10 sm:pt-14 pb-14 sm:pb-20 px-4 sm:px-6 lg:px-8 border-b border-[#00DCC0] terminal-grid"
+        className="relative pt-6 sm:pt-8 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 border-b border-[#00DCC0] terminal-grid"
       >
         {/* Decorative Floating Retro Pixel Blocks across Hero */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">

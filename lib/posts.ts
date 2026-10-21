@@ -5,21 +5,30 @@ import matter from "gray-matter";
 const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getAllPostSlugs() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  if (!fs.existsSync(postsDirectory)) return [];
+  const fileNames = fs.readdirSync(postsDirectory).filter((f) => f.endsWith(".md"));
   return fileNames.map((fileName) => fileName.replace(/\.md$/, ""));
 }
 
 export function getSortedPostsData() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  if (!fs.existsSync(postsDirectory)) return [];
+  const fileNames = fs.readdirSync(postsDirectory).filter((f) => f.endsWith(".md"));
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
+    const rawDate = matterResult.data.date;
+    const dateStr =
+      rawDate instanceof Date
+        ? rawDate.toISOString().split("T")[0]
+        : String(rawDate || "");
 
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; author: string }),
+      title: String(matterResult.data.title || id),
+      author: String(matterResult.data.author || "Contributor"),
+      date: dateStr,
     };
   });
 
@@ -36,10 +45,17 @@ export function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
+  const rawDate = matterResult.data.date;
+  const dateStr =
+    rawDate instanceof Date
+      ? rawDate.toISOString().split("T")[0]
+      : String(rawDate || "");
 
   return {
     id,
     content: matterResult.content,
-    ...(matterResult.data as { date: string; title: string; author: string }),
+    title: String(matterResult.data.title || id),
+    author: String(matterResult.data.author || "Contributor"),
+    date: dateStr,
   };
 }

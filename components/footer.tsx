@@ -2,15 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const pathname = usePathname();
-
-  if (pathname?.startsWith("/prototype")) {
-    return null;
-  }
-
   return (
     <footer className="relative border-t border-[#00DCC0] bg-[#012728] pt-12 pb-8 px-4 sm:px-6 font-mono text-xs text-[#B5FFF0] terminal-grid overflow-hidden">
       {/* Background scattered decorative pixel squares */}
@@ -71,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://chat.whatsapp.com"
+                  href="https://chat.whatsapp.com/vosc-vasavi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#6AFBD8] transition-colors"
@@ -91,7 +84,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://discord.gg"
+                  href="https://discord.gg/vosc-vasavi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#6AFBD8] transition-colors"
@@ -128,23 +121,39 @@ export default function Footer() {
                   className="w-7 h-7"
                   aria-hidden="true"
                 >
+                  {/* Curved Open Book Base & Deckle Wings */}
                   <path
-                    d="M18 10 L6 6 C4 5 2 6 2 8 V24 C2 26 4 27 6 28 L18 32 Z"
+                    d="M18 31 C15 32.2 10 32 4 29 C3 28.5 2.5 27.5 3 26.5 L4 23.5 C8 26 13 26.5 18 24.5 C23 26.5 28 26 32 23.5 L33 26.5 C33.5 27.5 33 28.5 32 29 C26 32 21 32.2 18 31 Z"
                     stroke="#00DCC0"
-                    strokeWidth="1.5"
+                    strokeWidth="1.3"
                     fill="#061B1C"
                   />
+                  {/* Left Curved Open Spread */}
                   <path
-                    d="M18 10 L30 6 C32 5 34 6 34 8 V24 C34 26 32 27 30 28 L18 32 Z"
+                    d="M18 15 C13 11.5 7 12 3 15 L4 23 C8 20 13 20 18 23.5 Z"
                     stroke="#00DCC0"
-                    strokeWidth="1.5"
+                    strokeWidth="1.3"
                     fill="#061B1C"
                   />
-                  <line x1="18" y1="8" x2="18" y2="32" stroke="#6AFBD8" strokeWidth="2" />
-                  <path d="M18 14 L12 11 V8" stroke="#6AFBD8" strokeWidth="1.2" />
-                  <path d="M18 14 L24 11 V8" stroke="#6AFBD8" strokeWidth="1.2" />
-                  <circle cx="12" cy="7" r="1.5" fill="#6AFBD8" />
-                  <circle cx="24" cy="7" r="1.5" fill="#6AFBD8" />
+                  {/* Right Curved Open Spread */}
+                  <path
+                    d="M18 15 C23 11.5 29 12 33 15 L32 23 C28 20 23 20 18 23.5 Z"
+                    stroke="#00DCC0"
+                    strokeWidth="1.3"
+                    fill="#061B1C"
+                  />
+                  {/* Inner Page Ribs */}
+                  <path d="M17.5 18 C13.5 15.5 8.5 15.5 4.5 18" stroke="#6AFBD8" strokeWidth="1" strokeLinecap="round" />
+                  <path d="M18.5 18 C22.5 15.5 27.5 15.5 31.5 18" stroke="#6AFBD8" strokeWidth="1" strokeLinecap="round" />
+                  {/* Book Center Spine */}
+                  <line x1="18" y1="13" x2="18" y2="31" stroke="#6AFBD8" strokeWidth="1.8" strokeLinecap="round" />
+                  {/* Radiating Circuit Lines from Spine Cleft */}
+                  <path d="M18 13 V5" stroke="#6AFBD8" strokeWidth="1.2" strokeLinecap="round" />
+                  <path d="M18 9 L11 6 V3" stroke="#6AFBD8" strokeWidth="1.1" strokeLinecap="round" />
+                  <path d="M18 9 L25 6 V3" stroke="#6AFBD8" strokeWidth="1.1" strokeLinecap="round" />
+                  <circle cx="11" cy="3" r="1.3" fill="#6AFBD8" />
+                  <circle cx="18" cy="4" r="1.5" fill="#6AFBD8" />
+                  <circle cx="25" cy="3" r="1.3" fill="#6AFBD8" />
                 </svg>
               </div>
               <span className="font-pixel text-xs text-[#6AFBD8] tracking-wider uppercase leading-none">

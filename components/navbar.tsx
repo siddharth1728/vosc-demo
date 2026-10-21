@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import VoscLogoMark from "@/components/vosc-logo-mark";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -12,10 +13,6 @@ export default function Navbar() {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
-
-  if (pathname?.startsWith("/prototype")) {
-    return null;
-  }
 
   const navLinks = [
     { label: "home", href: "/" },
@@ -32,7 +29,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-[#012728]/95 backdrop-blur-md border-b border-[#00DCC0] terminal-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Left: VOSC Brand with Book Circuit Icon */}
           <Link
             href="/"
@@ -40,36 +37,8 @@ export default function Navbar() {
             aria-label="VOSC Home"
           >
             {/* VOSC Book & Circuit Vector Mark */}
-            <div className="w-8 h-8 flex items-center justify-center text-[#6AFBD8] group-hover:scale-105 transition-transform">
-              <svg
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-8 h-8"
-                aria-hidden="true"
-              >
-                {/* Book Base */}
-                <path
-                  d="M18 10 L6 6 C4 5 2 6 2 8 V24 C2 26 4 27 6 28 L18 32 Z"
-                  stroke="#00DCC0"
-                  strokeWidth="1.5"
-                  fill="#061B1C"
-                />
-                <path
-                  d="M18 10 L30 6 C32 5 34 6 34 8 V24 C34 26 32 27 30 28 L18 32 Z"
-                  stroke="#00DCC0"
-                  strokeWidth="1.5"
-                  fill="#061B1C"
-                />
-                {/* Book Center Line */}
-                <line x1="18" y1="8" x2="18" y2="32" stroke="#6AFBD8" strokeWidth="2" />
-                {/* Radiating Circuit Lines */}
-                <path d="M18 14 L12 11 V8" stroke="#6AFBD8" strokeWidth="1.2" />
-                <path d="M18 14 L24 11 V8" stroke="#6AFBD8" strokeWidth="1.2" />
-                <circle cx="12" cy="7" r="1.5" fill="#6AFBD8" />
-                <circle cx="24" cy="7" r="1.5" fill="#6AFBD8" />
-                <circle cx="18" cy="8" r="1.5" fill="#6AFBD8" />
-              </svg>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-[#6AFBD8] group-hover:scale-105 transition-transform shrink-0">
+              <VoscLogoMark className="w-9 h-9 sm:w-10 sm:h-10" />
             </div>
 
             <div className="flex flex-col">
@@ -107,6 +76,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
           </nav>
 
           {/* Mobile Menu Toggle Button */}

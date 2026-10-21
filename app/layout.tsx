@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Silkscreen } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { Toaster } from "sonner";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1 w-full">{children}</div>
         <Analytics />
+        <Toaster position="bottom-right" richColors theme="dark" />
         <Footer />
       </body>
     </html>
