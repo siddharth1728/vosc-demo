@@ -43,13 +43,14 @@ export default function VoscLogoMark({
         <path d="M 25 15 L 33 11" />
       </g>
 
-      {/* Circuit Nodes / Solder Vias */}
-      <circle cx="11" cy="6" r="1.8" fill="#FFFFFF" stroke="#00DCC0" strokeWidth="1" />
-      <circle cx="20" cy="6" r="2" fill="#FFFFFF" stroke="#00DCC0" strokeWidth="1" />
-      <circle cx="29" cy="6" r="1.8" fill="#FFFFFF" stroke="#00DCC0" strokeWidth="1" />
-      <circle cx="7" cy="11" r="1.5" fill="#FFFFFF" stroke="#00DCC0" strokeWidth="0.8" />
-      <circle cx="33" cy="11" r="1.5" fill="#FFFFFF" stroke="#00DCC0" strokeWidth="0.8" />
-      <circle cx="20" cy="18" r="1.5" fill="#6AFBD8" />
+      {/* Circuit Nodes / Hollow Solder Via Rings */}
+      <g stroke="#FFFFFF" strokeWidth="1.2" fill="#012728">
+        <circle cx="11" cy="6" r="2" />
+        <circle cx="20" cy="5.5" r="2.2" />
+        <circle cx="29" cy="6" r="2" />
+        <circle cx="7" cy="11" r="1.8" />
+        <circle cx="33" cy="11" r="1.8" />
+      </g>
 
       {/* THE PROMINENT OPEN BOOK WITH LUMINOUS WHITE PAGES */}
       {/* 1. Underlying Page Stack Layers */}
